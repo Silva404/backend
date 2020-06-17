@@ -9,6 +9,7 @@
         <img src="{{ data.imgUrl}}" alt="Breno Silva" class="redondo">
         <h1>{{ data.name}}</h1>
         <h2>{{ data.role}}</h2>
+        <h3>{{ data.description}}</h3>
         <p>
             <h3>Nossa Stack</h3>
             <ul>
@@ -25,8 +26,8 @@
     </div>
 
     <div class="links space">
-        <a href=""></a>
-        <a href=""></a>
+        {% for link in data.links %}
+            <a href="{{ link.url}}">{{ link.name}}</a>
+        {% endfor %}
     </div>
 {% endblock content %}
-

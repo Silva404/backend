@@ -16,14 +16,27 @@ server.set('view engine', 'njk')
 //configuração do nunjucks pra usar o express como servidor
 nunjucks.configure('views', {
     express: server,
-    noCache: true
+    noCache: true,
+    autoescape: false
 })
 
 
-
+0
 // renderizar minhas paginas html e dar um dominio a elas
 server.get('/', (req, res) => {
-    res.render('home')
+    const data = {
+        name: 'Breno Silva',
+        role: 'Estudante - Rockeseat',
+        description: `Programador fullstack, focado em ampliar o conhecimento.
+            <br>
+            Colaborador da
+            <a href="https://rockeseat.com" target="_blank">Rockeseat</a>`,
+        links: [
+            { name: 'Github', url: 'https://github.com/Silva404' },
+            { name: 'Linkedin', url: 'https://www.linkedin.com/in/breno-silva-3604461a5/' }
+        ]
+    }
+    res.render('home', { data})
 })
 
 server.get('/portfolio', (req, res) => {
@@ -35,14 +48,14 @@ server.get('/about', (req, res) => {
         imgUrl: 'https://camo.githubusercontent.com/268b1344409fac98c4eeda520482b6910c4ddcba/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f676f6c64656e2d77696e642f626f6f7463616d702d6c61756e6368626173652f6c6f676f2e706e67',
         name: 'Breno Silva',
         role: 'Estudante - Rockeseat',
-        description: 'Levando você do zero a júnior em tempo recorde,<br>venha já embarcar nesse foguete e atinga o próximo nível',
-        link: [
-            { name: 'Github', link: 'https://github.com/Silva404' },
-            { name: 'Linkedin', link: 'https://www.linkedin.com/in/breno-silva-3604461a5/' }
+        description: 'Levando você do zero a júnior em tempo recorde, <br> venha já embarcar nesse foguete e atinga o próximo nível',
+        links: [
+            { name: 'Github', url: 'https://github.com/Silva404' },
+            { name: 'Linkedin', url: 'https://www.linkedin.com/in/breno-silva-3604461a5/' }
         ]
     }
 
-    res.render('about')
+    res.render('about', { data })
 })
 
 
