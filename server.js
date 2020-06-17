@@ -24,6 +24,14 @@ server.get('/', (req, res) => {
     res.render('index')
 })
 
+server.get('/portfolio', (req, res) => {
+    res.render('portfolio')
+})
+
+server.get('/about', (req, res) => {
+    res.render('about')
+})
+
 
 
 // escutando a porta do servidor
