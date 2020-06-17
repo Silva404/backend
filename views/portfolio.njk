@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout.njk' %}
 
 {% block styles %}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,107 +12,28 @@
 {% block content %}
 
     <div id="wrapper">
-        <h1>portfolio</h1>
+        <h1>Portfolio</h1>
 
     </div>
 
     <section class="cards">
 
-        <div class="card" id="Ab33948mbW8">
-            <div class="card_image-container">
-                <img src="https://img.youtube.com/vi/Ab33948mbW8/maxresdefault.jpg" alt="EU">
-            </div>
+        {% for item in items %}
+            <div class="card" id="{{ item.id}}">
+                <div class="card_image-container">
+                    <img src="https://img.youtube.com/vi/{{ item.id}}/maxresdefault.jpg" alt="Imagem de {{ item.tittle}}">
+                </div>
 
-            <div class="card_content">
-                <p>
-                    Formulário Animado com JS puro e CSS Animation | Mayk Brito</p>
-            </div>
+                <div class="card_content">
+                    <p>{{ item.tittle}}</p>
+                </div>
 
-            <div class="card_info">
-                <p>57 min</p>
-                <p class="card_price">Free</p>
+                <div class="card_info">
+                    <p>{{ item.duration}}</p>
+                    <p class="card_price">{{ item.price}}</p>
+                </div>
             </div>
-        </div>
-
-        <div class="card" id="BoBaSHpZhyk">
-            <div class="card_image-container">
-                <img src="https://img.youtube.com/vi/BoBaSHpZhyk/maxresdefault.jpg" alt="EU">
-            </div>
-
-            <div class="card_content">
-                <p>
-                    Formulário Animado com JS puro e CSS Animation | Mayk Brito</p>
-            </div>
-
-            <div class="card_info">
-                <p>57 min</p>
-                <p class="card_price">Free</p>
-            </div>
-        </div>
-
-        <div class="card" id="BoBaSHpZhyk">
-            <div class="card_image-container">
-                <img src="https://img.youtube.com/vi/BoBaSHpZhyk/maxresdefault.jpg" alt="EU">
-            </div>
-
-            <div class="card_content">
-                <p>
-                    Formulário Animado com JS puro e CSS Animation | Mayk Brito</p>
-            </div>
-
-            <div class="card_info">
-                <p>57 min</p>
-                <p class="card_price">Free</p>
-            </div>
-        </div>
-
-        <div class="card" id="BoBaSHpZhyk">
-            <div class="card_image-container">
-                <img src="https://img.youtube.com/vi/BoBaSHpZhyk/maxresdefault.jpg" alt="EU">
-            </div>
-
-            <div class="card_content">
-                <p>
-                    Formulário Animado com JS puro e CSS Animation | Mayk Brito</p>
-            </div>
-
-            <div class="card_info">
-                <p>57 min</p>
-                <p class="card_price">Free</p>
-            </div>
-        </div>
-
-        <div class="card" id="BoBaSHpZhyk">
-            <div class="card_image-container">
-                <img src="https://img.youtube.com/vi/BoBaSHpZhyk/maxresdefault.jpg" alt="EU">
-            </div>
-
-            <div class="card_content">
-                <p>
-                    Formulário Animado com JS puro e CSS Animation | Mayk Brito</p>
-            </div>
-
-            <div class="card_info">
-                <p>57 min</p>
-                <p class="card_price">Free</p>
-            </div>
-        </div>
-
-        <div class="card" id="BoBaSHpZhyk">
-            <div class="card_image-container">
-                <img src="https://img.youtube.com/vi/BoBaSHpZhyk/maxresdefault.jpg" alt="EU">
-            </div>
-
-            <div class="card_content">
-                <p>
-                    Formulário Animado com JS puro e CSS Animation | Mayk Brito</p>
-            </div>
-
-            <div class="card_info">
-                <p>57 min</p>
-                <p class="card_price">Free</p>
-            </div>
-        </div>
+        {% endfor %}
 
     </section>
 
@@ -128,4 +49,4 @@
         </div>
 
         <script src="scripts/classes.js"></script>
-{% endblock content %}
+    {% endblock content %}
