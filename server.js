@@ -8,7 +8,7 @@ const server = express()
 server.use(express.static('public'))
 
 // parametros('view engine', 'ja diz qual o tipo do meu arquivo')
-server.set('view engine', 'html')
+server.set('view engine', 'njk')
 
 
 //configuração do nunjucks pra usar o express como servidor
@@ -21,7 +21,7 @@ nunjucks.configure('views', {
 
 // renderizar minhas paginas html e dar um dominio a elas
 server.get('/', (req, res) => {
-    res.render('index')
+    res.render('home')
 })
 
 server.get('/portfolio', (req, res) => {
