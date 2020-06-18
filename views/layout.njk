@@ -4,18 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block styles %}
-{% endblock styles %}
         <link rel="stylesheet" href="styles/main.css">
+        {% block styles %}{% endblock styles %}
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-{% block title %}
-<title>Teste</title>
-{% endblock title %}
-        
+        {% block title %}
+            <title>Teste</title>
+        {% endblock title %}
 
     </head>
-    <body>  
+    <body>
         <header>
             <div class="links">
                 <a href="/portfolio">Aulas</a>
@@ -26,5 +24,6 @@
 
         {% block content %}{% endblock content %}
 
+        {% block script %}{% endblock script %}
     </body>
 </html>

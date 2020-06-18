@@ -28,8 +28,6 @@ for (let card of cards) {
 
 
 
-
-
 // for (let card of cards) {
 //     card.addEventListener('click', () => {
 //         const videoId = card.getAttribute('id')

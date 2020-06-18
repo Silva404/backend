@@ -64,21 +64,21 @@ server.get('/about', (req, res) => {
 server.get('/video', (req, res) => {
     const id = req.query.id
 
-    const video = videos.find(video => {
-        if (video.id == id) {
-            return true
-        }
-    })
+    const video = videos.find(video => { return video.id == id })
 
-    if (!video) {
-        return res.send('Não foi possível achar seu arquivo.')
-    }
-
+    // if (!video) {
+    //     return res.send('Não foi possível achar seu arquivo.')
+    // }
 
     return res.render('video', { item: video })
 })
 
 
+
+// syntax longa, o video.id = id já propõe um true e false
+// if (video.id == id) {
+//     return true
+// }
 
 
 // escutando a porta do servidor
