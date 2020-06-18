@@ -58,9 +58,18 @@ server.get('/about', (req, res) => {
     res.render('about', { data })
 })
 
+server.get('/video', (req, res) => {
+    const id = req.query.id
+
+    const video = videos.find( video => {
+        
+    })
+
+    res.send(id)
+})
 
 
 // escutando a porta do servidor
-server.listen(5000, () => {
+server.listen(3000, () => {
     console.log('Servidor ligado!')
 })

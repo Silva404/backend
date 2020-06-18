@@ -97,10 +97,12 @@ header {
 .card {
     background: var(--color-red);
     display: grid;
+    cursor: pointer;
 }
 
 .card_image-container img{
     width: 100% ;
+    
 }
 
 .card_content,
@@ -120,6 +122,20 @@ header {
     padding: 5px 20px;
     border-radius: 20px;
     text-align: center;
+}
+
+.featured-wrapper.card_image-container {
+    position: relative;
+}
+
+.featured {
+    background: #bbf146;
+    color: #1c1d25;
+    position: absolute;
+    right: 5px;
+    top: -10px;
+    padding: 5px 16px;  
+    border-radius: 16px;
 }
 
 /* ===========
