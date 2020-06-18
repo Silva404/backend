@@ -82,6 +82,6 @@ server.get('/video', (req, res) => {
 
 
 // escutando a porta do servidor
-server.listen(3000, () => {
+server.listen(4000, () => {
     console.log('Servidor ligado!')
 })
