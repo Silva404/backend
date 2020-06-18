@@ -2,6 +2,7 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
 const videos = require('./data')
+const { query } = require('express')
 
 
 // atrelando o express a bind
@@ -36,7 +37,7 @@ server.get('/', (req, res) => {
             { name: 'Linkedin', url: 'https://www.linkedin.com/in/breno-silva-3604461a5/' }
         ]
     }
-    res.render('home', { data})
+    res.render('home', { data })
 })
 
 server.get('/portfolio', (req, res) => {
@@ -61,11 +62,18 @@ server.get('/about', (req, res) => {
 server.get('/video', (req, res) => {
     const id = req.query.id
 
-    const video = videos.find( video => {
-        
+    const video = videos.find(video => {
+        if (video.id == id) {
+            return true
+        }
     })
 
-    res.send(id)
+    if (!video) {
+        return res.send('Não foi possível achar seu arquivo.')
+    }
+
+
+    return res.render('video', { item: video })
 })
 
 
