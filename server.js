@@ -59,6 +59,8 @@ server.get('/about', (req, res) => {
     res.render('about', { data })
 })
 
+
+
 server.get('/video', (req, res) => {
     const id = req.query.id
 
@@ -75,6 +77,8 @@ server.get('/video', (req, res) => {
 
     return res.render('video', { item: video })
 })
+
+
 
 
 // escutando a porta do servidor

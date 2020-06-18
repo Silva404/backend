@@ -13,12 +13,27 @@ document
     })
 
 
+  
+
 for (let card of cards) {
     card.addEventListener('click', () => {
         const videoId = card.getAttribute('id')
-        modal.classList.remove('hide')
-        modal.querySelector('iframe').src=`https://youtube.com/embed/${videoId}`
+        console.log(videoId)
+        
+        window.location.href = `/video?id=${videoId}`
     })
 }
 
-// https://youtube.com/embed/Ab33948mbW8
+
+
+
+
+
+
+// for (let card of cards) {
+//     card.addEventListener('click', () => {
+//         const videoId = card.getAttribute('id')
+//         modal.classList.remove('hide')
+//         modal.querySelector('iframe').src=`https://youtube.com/embed/${videoId}`
+//     })
+// }
