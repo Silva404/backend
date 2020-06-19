@@ -73,12 +73,11 @@ server.get('/video', (req, res) => {
     return res.render('video', { item: video })
 })
 
+server.get("/courses/:id", function (req, res) {
+    const id = req.params.id;
 
-
-// syntax longa, o video.id = id já propõe um true e false
-// if (video.id == id) {
-//     return true
-// }
+    return res.send(`O id fornecido na rota é: ${id}`);
+});
 
 
 // escutando a porta do servidor
